@@ -41,8 +41,20 @@ public class MainActivity extends AppCompatActivity {
                 p2 = new Point(point_x, point_y);
 
                 Intent intent = new Intent(MainActivity.this, DisplayMidpoint.class);
-                intent.putExtra("Point1", p1);
-                intent.putExtra("Point2", p2);
+                //intent.putExtra("Point1", p1);
+               // intent.putExtra("Point2", p2);
+
+//                Bundle bundle = new Bundle();
+//                bundle.putInt("quantity", quantity);
+//                bundle.putDouble("price", price);
+//
+//                intent.putExtras(bundle);
+
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("Point1", p1);
+                bundle.putSerializable("Point2", p2);
+                intent.putExtras(bundle);
+
                 startActivity(intent);
             }
         });
